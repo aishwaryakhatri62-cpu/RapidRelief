@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Helper Dashboard</title>
+<style>
+body {font-family: Arial; background:#f4f6f9;}
+table {width:80%; margin:50px auto; border-collapse: collapse;}
+th, td {padding:12px; border:1px solid #ddd; text-align:center;}
+th {background:#667eea; color:white;}
+a {text-decoration:none; color:blue;}
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Helper Dashboard</h2>
+
+<table>
+<tr>
+<th>Name</th>
+<th>Skill</th>
+<th>Rating</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for helper in helpers %}
+<tr>
+<td>{{ helper.name }}</td>
+<td>{{ helper.skill }}</td>
+<td>{{ helper.rating }}</td>
+<td>{{ helper.status }}</td>
+<td><a href="/toggle_status/{{ helper.id }}">Toggle</a></td>
+</tr>
+{% endfor %}
+
+</table>
+
+<div style="text-align:center;">
+<a href="/">Home</a> | <a href="/add_helper_page">Add Helper</a>
+</div>
+
+</body>
+</html>

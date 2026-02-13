@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment Result</title>
+<style>
+body {font-family: Arial; background:linear-gradient(135deg,#667eea,#764ba2); color:white; text-align:center;}
+.card {margin:150px auto; width:400px; padding:30px; background:rgba(255,255,255,0.1); border-radius:20px;}
+</style>
+</head>
+<body>
+
+<div class="card">
+{% if helper %}
+<h2>Helper Assigned</h2>
+<p>Name: {{ helper.name }}</p>
+<p>Skill: {{ helper.skill }}</p>
+<p>Rating: {{ helper.rating }}</p>
+{% else %}
+<h2>No Helper Available</h2>
+{% endif %}
+<br>
+<a href="/" style="color:yellow;">Back</a>
+</div>
+
+</body>
+</html>
